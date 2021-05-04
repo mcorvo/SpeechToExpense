@@ -21,4 +21,7 @@ public interface ExpensesDao {
     @Query("SELECT * FROM expenses_table ORDER BY expense ASC")
     LiveData<List<Expenses>> getAllExpenses();
 
+    @Query("SELECT SUM(expense) as total FROM expenses_table where category LIKE :category")
+    LiveData<Float> getCategoryTotal(String category);
+
 }

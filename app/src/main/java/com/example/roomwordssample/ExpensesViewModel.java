@@ -19,7 +19,13 @@ public class ExpensesViewModel extends AndroidViewModel {
         mAllExpenses = mRepository.getAllExpenses();
     }
 
+    // Get all expenses registered in Room DB
     LiveData<List<Expenses>> getAllExpenses() { return mAllExpenses; }
+
+    // Get expenses registered for a given category
+    LiveData<Float> getCategoryTotal(String category) {
+        return mRepository.getCategoryTotal(category);
+    }
 
     public void insert(Expenses expense) { mRepository.insert(expense); }
 

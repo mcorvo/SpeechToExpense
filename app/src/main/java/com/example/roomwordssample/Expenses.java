@@ -37,7 +37,7 @@ public class Expenses {
     @NonNull
     public final String getRecord() {
         String expense = new String("");
-        expense = Float.toString(mExpense) + " " + mCategory +
+        expense = Float.toString(mExpense) + " " + mCategory + " " +
                 mDate.toString();
         return expense;
     }

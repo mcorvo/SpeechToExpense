@@ -46,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
 
-        ViewGroup hView = (ViewGroup)findViewById(android.R.id.content);
-        WordViewHolder wvHolder = WordViewHolder.create(hView);
-
         final WordListAdapter adapter = new WordListAdapter(new WordListAdapter.WordDiff());
         final ExpensesListAdapter expAdapter = new ExpensesListAdapter(new ExpensesListAdapter.WordDiff());
 
@@ -118,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
         final Intent speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "it-IT");
 
         speechRecognizer.setRecognitionListener(recoListener);
 
